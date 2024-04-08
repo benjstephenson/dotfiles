@@ -1,0 +1,8 @@
+bun 1.0.0
+coursier 2.1.5
+deno 1.36.3
+dotnet-core 7.0.400
+nodejs 20.9.0
+php 7.4.33
+pnpm 8.9.0
+sbt 1.9.3
