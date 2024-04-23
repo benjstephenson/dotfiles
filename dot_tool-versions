@@ -6,3 +6,4 @@ nodejs 20.9.0
 php 7.4.33
 pnpm 8.9.0
 sbt 1.9.3
+poetry 1.8.2

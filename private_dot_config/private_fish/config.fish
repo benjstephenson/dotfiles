@@ -14,6 +14,12 @@ alias ls "ls -p -G"
 alias la "ls -A"
 alias ll "ls -l"
 alias lla "ll -A"
+
+if type -q eza
+  alias ll "eza -l -g --icons"
+  alias ls "eza"
+end
+
 alias g git
 alias k kubectl
 command -qv nvim && alias vim nvim
@@ -42,15 +48,6 @@ fish_add_path -g /Users/bste/.dotnet/tools
 fish_add_path -g /Users/bste/.luarocks/bin
 fish_add_path -g /Users/bste/.cargo/bin
 
-switch (uname)
-  case Darwin
-    source (dirname (status --current-filename))/config-osx.fish
-  case Linux
-    # Do nothing
-  case '*'
-    source (dirname (status --current-filename))/config-windows.fish
-end
-
 set LOCAL_CONFIG (dirname (status --current-filename))/config-local.fish
 if test -f $LOCAL_CONFIG
   source $LOCAL_CONFIG
@@ -61,6 +58,7 @@ starship init fish | source
 
 source ~/.asdf/asdf.fish
 
+zoxide init fish | source
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

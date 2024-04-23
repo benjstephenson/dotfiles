@@ -1,5 +1,5 @@
-if type -q exa
-  alias ll "exa -l -g --icons"
-  alias ls "exa"
+if type -q eza
+  alias ll "eza -l -g --icons"
+  alias ls "eza"
 end
 
