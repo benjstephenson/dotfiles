@@ -1,9 +1,5 @@
-[github]
-	user = benjstephenson
-[user]
-	email = bjames.stephenson@gmail.com
-	name = Benji Stephenson
-    ***REMOVED***
+[include]
+    path = ~/.gitconfig-user
 
 [gpg]
     format = ssh
