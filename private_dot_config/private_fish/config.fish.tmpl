@@ -41,12 +41,12 @@ set -g GOPATH $HOME/go
 fish_add_path $GOPATH/bin
 
 # Coursier
-set -g CSPATH /Users/bste/Library/Application Support/Coursier/bin/
-fish_add_path CSPATH
+set -g CSPATH /Users/{{ .chezmoi.username }}/Library/Application Support/Coursier/bin/
+fish_add_path -g CSPATH
 
-fish_add_path -g /Users/bste/.dotnet/tools
-fish_add_path -g /Users/bste/.luarocks/bin
-fish_add_path -g /Users/bste/.cargo/bin
+fish_add_path -g /Users/{{ .chezmoi.username }}/.dotnet/tools
+fish_add_path -g /Users/{{ .chezmoi.username }}/.luarocks/bin
+fish_add_path -g /Users/{{ .chezmoi.username }}/.cargo/bin
 
 set LOCAL_CONFIG (dirname (status --current-filename))/config-local.fish
 if test -f $LOCAL_CONFIG
@@ -55,11 +55,7 @@ end
 
 thefuck --alias | source
 starship init fish | source
-
-source ~/.asdf/asdf.fish
-
 zoxide init fish | source
-
 pyenv init - | source
 
-set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /Users/bste/.ghcup/bin $PATH # ghcup-env
+set -q GHCUP_INSTALL_BASE_PREFIX[1]; or set GHCUP_INSTALL_BASE_PREFIX $HOME ; set -gx PATH $HOME/.cabal/bin /Users/{{ .chezmoi.username }}/.ghcup/bin $PATH # ghcup-env
