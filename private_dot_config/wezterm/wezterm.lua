@@ -27,9 +27,9 @@ config.color_scheme = "tokyonight_night"
 --config.window_background_opacity = 0.85
 --config.macos_window_background_blur = 20
 
-config.font = wezterm.font("Fira Code", { weight = "Medium" })
---config.font = wezterm.font("Monaspace Neon", { weight = "Medium" })
-config.font_size = 14.0
+-- config.font = wezterm.font("Fira Code", { weight = "Medium" })
+config.font = wezterm.font("Monaspace Neon", { weight = "Medium" })
+config.font_size = 16.0
 config.harfbuzz_features = {
 	"calt",
 	"liga",
