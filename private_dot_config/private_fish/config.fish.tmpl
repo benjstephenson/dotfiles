@@ -40,14 +40,13 @@ fish_add_path -g node_modules/.bin
 set -g GOPATH $HOME/go
 fish_add_path $GOPATH/bin
 
-# Coursier
-set -g CSPATH /Users/{{ .chezmoi.username }}/Library/Application Support/Coursier/bin/
-fish_add_path -g CSPATH
-
-fish_add_path /opt/homebrew/opt/openjdk/bin
+fish_add_path -g /opt/homebrew/opt/openjdk/bin
 fish_add_path -g /Users/{{ .chezmoi.username }}/.dotnet/tools
 fish_add_path -g /Users/{{ .chezmoi.username }}/.luarocks/bin
 fish_add_path -g /Users/{{ .chezmoi.username }}/.cargo/bin
+
+set -g CSPATH "/Users/{{ .chezmoi.username }}/Library/Application Support/Coursier/bin/"
+fish_add_path -g $CSPATH
 
 set LOCAL_CONFIG (dirname (status --current-filename))/config-local.fish
 if test -f $LOCAL_CONFIG
