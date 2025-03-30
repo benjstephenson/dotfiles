@@ -22,8 +22,8 @@ config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 
 -- For example, changing the color scheme:
-config.color_scheme = "tokyonight_night"
--- config.color_scheme = "Oxocarbon Dark"
+-- config.color_scheme = "tokyonight_night"
+config.color_scheme = "Oxocarbon Dark"
 --config.window_background_opacity = 0.85
 --config.macos_window_background_blur = 20
 

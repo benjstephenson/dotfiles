@@ -1,0 +1,9 @@
+# vi: ft=gitconfig
+
+[github]
+	user = benjstephenson
+[user]
+	email = benji.stephenson@myraindrop.co.uk
+    name = Benji Stephenson
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII51v67jL0yUhckFpErpP1JGBXrkGhxLC0SMrJpRy5V6
+

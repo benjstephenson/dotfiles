@@ -1,8 +1,13 @@
 [include]
-    path = ~/.gitconfig-user
+    path = ~/.gitconfig-personal
+
+[includeIf "gitdir:~/ghq/github.com/GetRaindrop/"]
+    path = ~/.gitconfig-raindrop
 
 [gpg]
     format = ssh
+    name = Benji Stephenson
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAII51v67jL0yUhckFpErpP1JGBXrkGhxLC0SMrJpRy5V6
 
 [gpg "ssh"]
     program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
