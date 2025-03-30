@@ -27,7 +27,9 @@ command -qv nvim && alias vim nvim
 
 set -gx EDITOR nvim
 
+{{ if eq .chezmoi.os "darwin" }}
 eval (/opt/homebrew/bin/brew shellenv)
+{{ end }}
 
 fish_add_path -g ~/bin
 fish_add_path -g ~/.local/share/nvim/mason/bin
@@ -40,13 +42,17 @@ fish_add_path -g node_modules/.bin
 set -g GOPATH $HOME/go
 fish_add_path $GOPATH/bin
 
+{{ if eq .chezmoi.os "darwin" }}
 fish_add_path -g /opt/homebrew/opt/openjdk/bin
-fish_add_path -g /Users/{{ .chezmoi.username }}/.dotnet/tools
-fish_add_path -g /Users/{{ .chezmoi.username }}/.luarocks/bin
-fish_add_path -g /Users/{{ .chezmoi.username }}/.cargo/bin
+{{ end }}
+fish_add_path -g ~/{{ .chezmoi.username }}/.dotnet/tools
+fish_add_path -g ~/{{ .chezmoi.username }}/.luarocks/bin
+fish_add_path -g ~/{{ .chezmoi.username }}/.cargo/bin
 
+{{ if eq .chezmoi.os "darwin" }}
 set -g CSPATH "/Users/{{ .chezmoi.username }}/Library/Application Support/Coursier/bin/"
 fish_add_path -g $CSPATH
+{{ end }}
 
 set LOCAL_CONFIG (dirname (status --current-filename))/config-local.fish
 if test -f $LOCAL_CONFIG
